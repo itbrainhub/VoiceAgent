@@ -1,0 +1,52 @@
+{
+  "restaurant": {
+    "name": "Spice Route Kitchen",
+    "phone_number": "+15550100000",
+    "timezone": "Asia/Kolkata",
+    "currency": "INR",
+    "tax_rate_bp": 500,
+    "hours": {"open": "11:00", "close": "23:00"}
+  },
+  "categories": [
+    {
+      "name": "Mains", "kind": "main",
+      "items": [
+        {"name": "Butter Chicken", "price": 340, "description": "Tandoori chicken in a creamy tomato and butter gravy", "ingredients": ["chicken", "tomato", "butter", "cream", "spices"], "allergens": ["dairy"], "spice_level": 1, "synonyms": ["murgh makhani"], "popularity": 95,
+         "modifier_groups": [{"name": "Portion", "min": 1, "max": 1, "options": [{"name": "Half", "delta": -120}, {"name": "Full", "delta": 0}]}]},
+        {"name": "Paneer Tikka Masala", "price": 300, "veg": true, "description": "Grilled cottage cheese in a spiced onion tomato gravy", "ingredients": ["paneer", "onion", "tomato", "cream", "spices"], "allergens": ["dairy"], "spice_level": 2, "synonyms": ["paneer masala"], "popularity": 80},
+        {"name": "Chicken Biryani", "price": 320, "description": "Basmati rice layered with marinated chicken, served with raita", "ingredients": ["rice", "chicken", "yogurt", "saffron", "spices"], "allergens": ["dairy"], "spice_level": 2, "synonyms": ["biryani"], "popularity": 98,
+         "modifier_groups": [{"name": "Add-ons", "min": 0, "max": 2, "options": [{"name": "Extra raita", "delta": 30}, {"name": "Boiled egg", "delta": 25}]}]},
+        {"name": "Dal Makhani", "price": 240, "veg": true, "description": "Slow-cooked black lentils with butter and cream", "ingredients": ["black lentils", "kidney beans", "butter", "cream"], "allergens": ["dairy"], "spice_level": 1, "synonyms": ["dal", "daal"], "popularity": 70}
+      ]
+    },
+    {
+      "name": "Breads and Sides", "kind": "side",
+      "items": [
+        {"name": "Butter Naan", "price": 60, "veg": true, "description": "Tandoor-baked flatbread brushed with butter", "ingredients": ["wheat flour", "butter"], "allergens": ["gluten", "dairy"], "synonyms": ["naan", "nan"], "popularity": 90},
+        {"name": "Garlic Naan", "price": 75, "veg": true, "description": "Naan topped with garlic and coriander", "ingredients": ["wheat flour", "garlic", "butter"], "allergens": ["gluten", "dairy"], "synonyms": ["garlic nan"], "popularity": 85},
+        {"name": "Jeera Rice", "price": 150, "veg": true, "description": "Basmati rice tempered with cumin", "ingredients": ["rice", "cumin", "ghee"], "allergens": ["dairy"], "synonyms": ["cumin rice"], "popularity": 60},
+        {"name": "Cucumber Raita", "price": 70, "veg": true, "description": "Yogurt with cucumber and roasted cumin", "ingredients": ["yogurt", "cucumber", "cumin"], "allergens": ["dairy"], "synonyms": ["raita"], "popularity": 50}
+      ]
+    },
+    {
+      "name": "Drinks", "kind": "drink",
+      "items": [
+        {"name": "Mango Lassi", "price": 120, "veg": true, "description": "Chilled yogurt drink blended with mango", "ingredients": ["yogurt", "mango", "sugar"], "allergens": ["dairy"], "synonyms": ["lassi"], "popularity": 88},
+        {"name": "Masala Chaas", "price": 70, "veg": true, "description": "Spiced buttermilk", "ingredients": ["buttermilk", "cumin", "mint"], "allergens": ["dairy"], "synonyms": ["buttermilk", "chaas"], "popularity": 55},
+        {"name": "Coca-Cola", "price": 60, "veg": true, "description": "300 ml can", "ingredients": [], "allergens": [], "synonyms": ["coke", "cola"], "popularity": 75}
+      ]
+    },
+    {
+      "name": "Desserts", "kind": "dessert",
+      "items": [
+        {"name": "Gulab Jamun", "price": 110, "veg": true, "description": "Two warm milk dumplings in rose syrup", "ingredients": ["milk solids", "sugar", "rose water"], "allergens": ["dairy", "gluten"], "synonyms": ["gulab jamoon", "jamun"], "popularity": 85},
+        {"name": "Kulfi", "price": 120, "veg": true, "description": "Traditional pistachio ice cream", "ingredients": ["milk", "pistachio", "cardamom"], "allergens": ["dairy", "nuts"], "synonyms": ["kulfee"], "popularity": 65, "available": false}
+      ]
+    }
+  ],
+  "upsell_rules": [
+    {"trigger_item": "Butter Chicken", "suggest_item": "Garlic Naan", "pitch": "Garlic naan goes really well with butter chicken", "priority": 10},
+    {"trigger_item": "Dal Makhani", "suggest_item": "Jeera Rice", "pitch": "Most people pair dal makhani with jeera rice", "priority": 10},
+    {"trigger_item": "Chicken Biryani", "suggest_item": "Mango Lassi", "pitch": "A mango lassi is a great match with biryani", "priority": 8}
+  ]
+}
